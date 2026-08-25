@@ -21,10 +21,13 @@ body,
 .theme-entry,
 .runtime-form,
 .runtime-content,
-#form1 {
+#form1,
+.runtime-view,
+.scroll-contents {
     font-family: 'Plus Jakarta Sans', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif !important;
     background-color: #F8F5F2 !important;
     background: #F8F5F2 !important;
+    background-image: none !important;
     color: #1F2937 !important;
     -webkit-font-smoothing: antialiased;
     margin: 0 !important;
@@ -36,6 +39,7 @@ body,
 .runtime-content {
     margin: 0 !important;
     padding: 0 !important;
+    margin-top: -18px !important;
 }
 
 .theme-entry .form {
@@ -63,6 +67,15 @@ body,
     display: flex !important;
     width: 100% !important;
     margin: 0 !important;
+}
+
+.theme-entry .form .row>.view>* {
+    margin: 0 !important;
+}
+
+.theme-entry .form .view {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .form .row>.formcontrol:has(.empty) {
@@ -167,6 +180,11 @@ div.retal-custom-header-layout {
     text-align: left !important;
 }
 
+.form .row:has(a[name="Home btn"]) a.SourceCode-Forms-Controls-Web-Button svg.sidebar-icon {
+    margin-right: 14px !important;
+    flex-shrink: 0 !important;
+}
+
 .form .row:has(a[name="Home btn"]) a.SourceCode-Forms-Controls-Web-Button:hover {
     background-color: #464646 !important;
     color: #FFFFFF !important;
@@ -176,51 +194,6 @@ div.retal-custom-header-layout {
     background-color: #8C583F !important;
     color: #FFFFFF !important;
     font-weight: 600 !important;
-}
-
-.form .row:has(a[name="Home btn"]) a.SourceCode-Forms-Controls-Web-Button::before {
-    content: "" !important;
-    display: inline-block !important;
-    width: 20px !important;
-    height: 20px !important;
-    min-width: 20px !important;
-    margin-right: 14px !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    flex-shrink: 0 !important;
-}
-
-a[name="Home btn"]::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23C2C6CC' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'/%3E%3C/svg%3E") !important;
-}
-
-a[name="Home btn"].active-nav::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23FFFFFF' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'/%3E%3C/svg%3E") !important;
-}
-
-a[name="Add custm btn"]::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23C2C6CC' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z'/%3E%3C/svg%3E") !important;
-}
-
-a[name="Add custm btn"].active-nav::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23FFFFFF' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z'/%3E%3C/svg%3E") !important;
-}
-
-a[name="My custm btn"]::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23C2C6CC' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z'/%3E%3C/svg%3E") !important;
-}
-
-a[name="My custm btn"].active-nav::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23FFFFFF' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z'/%3E%3C/svg%3E") !important;
-}
-
-a[name="Project btn"]::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23C2C6CC' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M4 6h16M4 10h16M4 14h16M4 18h16'/%3E%3C/svg%3E") !important;
-}
-
-a[name="Project btn"].active-nav::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23FFFFFF' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M4 6h16M4 10h16M4 14h16M4 18h16'/%3E%3C/svg%3E") !important;
 }
 
 .form .row:not(:has(.retal-custom-header-layout)):not(:has(a[name="Home btn"])) {
@@ -790,4 +763,141 @@ a[name="Review Button"]:not(.hidden):hover {
     background-color: #874A37 !important;
     border-color: #874A37 !important;
     transform: translateY(-1px) !important;
+}
+
+div[name="Table"]:has([name="Cell notification"]) {
+    padding: 0px 32px 24px 32px !important;
+    border-spacing: 0 !important;
+    width: 100% !important;
+    border: none !important;
+    margin: 0 !important;
+}
+
+.custom-banner-container {
+    background-color: #8D624B !important;
+    border-radius: 16px !important;
+    padding: 24px 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-bottom: 24px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.banner-left-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 20px !important;
+}
+
+.banner-icon-wrapper {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-radius: 12px !important;
+    width: 48px !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.banner-text-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+}
+
+.banner-title {
+    display: flex !important;
+    align-items: center !important;
+    color: #FFFFFF !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+}
+
+.banner-title span {
+    color: #FFFFFF !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+}
+
+span[name="NotificationDesc_label"] {
+    color: #EBDCD5 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+.custom-btn {
+    background-color: #FFFFFF !important;
+    color: #333333 !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.2s ease !important;
+}
+
+.custom-btn:hover {
+    background-color: #F0F0F0 !important;
+}
+
+.custom-cards-table {
+    display: flex !important;
+    gap: 24px !important;
+    width: 100% !important;
+}
+
+.custom-card {
+    background-color: #FFFFFF !important;
+    border-radius: 12px !important;
+    padding: 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
+    box-sizing: border-box !important;
+}
+
+.card-icon-wrapper {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 24px !important;
+}
+
+.bg-gray {
+    background-color: #F3F3F3 !important;
+}
+
+.bg-orange {
+    background-color: #FEF4EB !important;
+}
+
+.bg-green {
+    background-color: #EAF4EC !important;
+}
+
+.card-number {
+    font-family: 'Times New Roman', Times, serif !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    color: #1A1A1A !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+}
+
+.card-label {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: #8C8C8C !important;
+    display: block !important;
 }
